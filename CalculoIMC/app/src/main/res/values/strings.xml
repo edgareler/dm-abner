@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Calculation of BMI</string>
+    <string name="peso">Weight: </string>
+    <string name="altura">Height:</string>
+    <string name="calcular">Calculate BMI</string>
+    <string name="nome_peso">Weight</string>
+    <string name="nome_altura">Height</string>
+    <string name="imc">BMI</string>
+    <string name="acima_do">above of Weight</string>
+    <string name="abaixo_do">below of Weight</string>
+    <string name="ok">Weight ok</string>
+</resources>
