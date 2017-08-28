@@ -58,4 +58,5 @@ public class MainActivity extends AppCompatActivity {
     private void atualizarResultado(){
         mLbResultado.setText(getString(mId_resultado) + ". " + getString(R.string.imc) + ": " + mResultado);
     }
+
 }
