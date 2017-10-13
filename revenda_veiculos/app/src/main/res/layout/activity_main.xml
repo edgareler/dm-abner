@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.abner.revenda_veiculos.MainActivity">
+
+    <Button
+        android:id="@+id/id_btn_veiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTROLE DE VEÍCULOS"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="156dp"
+        android:layout_marginLeft="101dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/id_btn_clientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="101dp"
+        android:layout_marginTop="78dp"
+        android:text="CONTROLE DE CLIENTES"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_btn_veiculo" />
+</android.support.constraint.ConstraintLayout>

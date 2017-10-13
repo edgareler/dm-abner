@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tipoPessoa">
+        <item>Pessoa Física</item>
+        <item>Pessoa Jurídica</item>
+    </array>
+</resources>
