@@ -5,22 +5,65 @@ package com.example.abner.revenda_veiculos.models;
  */
 
 public class Cliente {
-    public int id;
-    public String nome;
-    public int tipo;
-    public String doc;
-    public int renda;
-    public String obs;
 
-    public Cliente(String nome, int tipo) {
+    private Long id;
+    private String documento;
+    private String nome;
+    private int renda;
+    private String observacao;
+
+    public Cliente(String documento, String nome, int renda, String observacao) {
+        this.documento = documento;
         this.nome = nome;
-        this.tipo = tipo;
+        this.renda = renda;
+        this.observacao = observacao;
     }
 
-    public Cliente(String nome, int tipo, String doc, int renda) {
+    public Cliente(Long id, String documento, String nome, int renda, String observacao) {
+        this.id = id;
+        this.documento = documento;
         this.nome = nome;
-        this.tipo = tipo;
-        this.doc = doc;
         this.renda = renda;
+        this.observacao = observacao;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getRenda() {
+        return renda;
+    }
+
+    public void setRenda(int renda) {
+        this.renda = renda;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
 }

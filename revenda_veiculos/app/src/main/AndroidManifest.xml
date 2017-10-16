@@ -16,8 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClientesActivity" />
-        <activity android:name=".CadastroClienteActivity"></activity>
+        <activity
+            android:name=".ControleClientesActivity"
+            android:label="@string/controle_clientes"
+            />
+        <activity
+            android:name=".FormularioClienteActivity"
+            android:label="@string/formulario_clientes"
+            >
+        </activity>
     </application>
 
 </manifest>

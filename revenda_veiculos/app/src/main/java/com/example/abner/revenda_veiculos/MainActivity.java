@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch(view.getId()){
                 case R.id.id_btn_clientes:
-                    Intent itClt = new Intent(MainActivity.this, ClientesActivity.class);
+                    Intent itClt = new Intent(MainActivity.this, ControleClientesActivity.class);
                     startActivity(itClt);
                     break;
             }
