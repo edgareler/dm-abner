@@ -1,26 +1,31 @@
 package com.example.abner.revenda_veiculos.models;
 
+import java.io.Serializable;
+
 /**
  * Created by abner on 12/10/17.
  */
 
-public class Cliente {
+public class Cliente implements Serializable{
 
     private Long id;
+    private String tipo;
     private String documento;
     private String nome;
     private int renda;
     private String observacao;
 
-    public Cliente(String documento, String nome, int renda, String observacao) {
+    public Cliente(String tipo, String documento, String nome, int renda, String observacao) {
+        this.tipo = tipo;
         this.documento = documento;
         this.nome = nome;
         this.renda = renda;
         this.observacao = observacao;
     }
 
-    public Cliente(Long id, String documento, String nome, int renda, String observacao) {
+    public Cliente(Long id, String tipo, String documento, String nome, int renda, String observacao) {
         this.id = id;
+        this.tipo = tipo;
         this.documento = documento;
         this.nome = nome;
         this.renda = renda;
@@ -33,6 +38,14 @@ public class Cliente {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getDocumento() {

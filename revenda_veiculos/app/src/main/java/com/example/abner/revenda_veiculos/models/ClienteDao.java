@@ -19,6 +19,7 @@ public class ClienteDao {
 
     public static final String TABELA_CLIENTES = "CLIENTES";
     public static final String COLUNA_ID = "ID";
+    public static final String COLUNA_TIPO = "TIPO";
     public static final String COLUNA_DOCUMENTO = "DOCUMENTO";
     public static final String COLUNA_NOME = "NOME";
     public static final String COLUNA_RENDA = "RENDA";
@@ -32,6 +33,7 @@ public class ClienteDao {
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
+        cv.put(COLUNA_TIPO, cliente.getTipo());
         cv.put(COLUNA_DOCUMENTO, cliente.getDocumento());
         cv.put(COLUNA_NOME, cliente.getNome());
         cv.put(COLUNA_RENDA, cliente.getRenda());
@@ -48,6 +50,7 @@ public class ClienteDao {
         SQLiteDatabase db = helper.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
+        cv.put(COLUNA_TIPO, cliente.getTipo());
         cv.put(COLUNA_DOCUMENTO, cliente.getDocumento());
         cv.put(COLUNA_NOME, cliente.getNome());
         cv.put(COLUNA_RENDA, cliente.getRenda());
@@ -89,19 +92,23 @@ public class ClienteDao {
         return linhasExcluidas;
     }
 
+    public List<Cliente> all() {
+            return buscarCliente(null);
+    }
+
     public List<Cliente> buscarCliente(String filtro) {
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        String  sql = "SELECT + FROM " + TABELA_CLIENTES;
+        String  sql = "SELECT * FROM " + TABELA_CLIENTES;
 
         String[] argumentos = null;
 
-        if(filtro != null){
-            sql += "WHERE " + COLUNA_NOME + "LIKE ?";
+        if(filtro != null) {
+            sql += " WHERE " + COLUNA_NOME + "LIKE ?";
             argumentos = new String[]{ filtro };
         }
 
-        sql += "ORDER BY " + COLUNA_NOME;
+        sql += " ORDER BY " + COLUNA_NOME;
 
         Cursor cursor = db.rawQuery(sql, argumentos);
 
@@ -109,12 +116,13 @@ public class ClienteDao {
 
         while(cursor.moveToNext()) {
             Long id = cursor.getLong(cursor.getColumnIndex(COLUNA_ID));
+            String tipo = cursor.getString(cursor.getColumnIndex(COLUNA_TIPO));
             String documento = cursor.getString(cursor.getColumnIndex(COLUNA_DOCUMENTO));
             String nome = cursor.getString(cursor.getColumnIndex(COLUNA_NOME));
             int renda = cursor.getInt(cursor.getColumnIndex(COLUNA_RENDA));
             String observacao = cursor.getString(cursor.getColumnIndex(COLUNA_OBSERVACAO));
 
-            Cliente cliente = new Cliente(id, documento, nome, renda, observacao);
+            Cliente cliente = new Cliente(id, tipo, documento, nome, renda, observacao);
             clientes.add(cliente);
         }
 

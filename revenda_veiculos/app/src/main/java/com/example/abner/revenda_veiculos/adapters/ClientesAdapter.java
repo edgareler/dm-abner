@@ -41,11 +41,25 @@ public class ClientesAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return i;
+        return clientes.get(i).getId();
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+                // Pegar o objeto do carro daquele item da lista
+                Cliente cliente = clientes.get(i);
+                // Inflar a view que criamos para cada item
+                View linha = LayoutInflater.from(ctx).inflate(R.layout.item_cliente, null);
+
+                // Customizar os componentes da view para este cliente
+                TextView txtNome = (TextView) linha.findViewById(R.id.idTxtNome);
+                TextView txtTipo = (TextView) linha.findViewById(R.id.idTxtTipo);
+
+                txtNome.setText(cliente.getNome());
+                txtTipo.setText(cliente.getTipo());
+
+                // Retornar view
+                return linha;
     }
+
 }

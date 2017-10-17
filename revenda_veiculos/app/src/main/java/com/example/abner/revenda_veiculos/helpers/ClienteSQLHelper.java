@@ -34,8 +34,9 @@ public class ClienteSQLHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABELA_CLIENTES + " (" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "DOCUMENTO TEXT NOT NULL, " +
-                "NOME TEXT NOT NULL, " +
+                "TIPO TEXT NOT NULL, " +
+                "DOCUMENTO TEXT, " +
+                "NOME TEXT, " +
                 "RENDA INTEGER, " +
                 "OBSERVACAO TEXT " +
                 ") ");
