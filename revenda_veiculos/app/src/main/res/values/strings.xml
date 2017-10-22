@@ -2,4 +2,6 @@
     <string name="app_name">Revenda de Veículos</string>
     <string name="formulario_clientes">Cadastro de Cliente</string>
     <string name="controle_clientes">Controle de Clientes</string>
+    <string name="controle_carros">Controle de Carros</string>
+    <string name="formulario_carros">Cadastro de Carro</string>
 </resources>

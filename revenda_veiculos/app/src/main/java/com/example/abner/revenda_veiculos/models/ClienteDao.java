@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.abner.revenda_veiculos.helpers.ClienteSQLHelper;
+import com.example.abner.revenda_veiculos.helpers.RevendaSQLHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 public class ClienteDao {
-    private ClienteSQLHelper helper;
+    private RevendaSQLHelper helper;
 
     public static final String TABELA_CLIENTES = "CLIENTES";
     public static final String COLUNA_ID = "ID";
@@ -26,7 +26,7 @@ public class ClienteDao {
     public static final String COLUNA_OBSERVACAO = "OBSERVACAO";
 
     public ClienteDao(Context ctx){
-        helper = new ClienteSQLHelper(ctx);
+        helper = new RevendaSQLHelper(ctx);
     }
 
     public long inserir(Cliente cliente) {

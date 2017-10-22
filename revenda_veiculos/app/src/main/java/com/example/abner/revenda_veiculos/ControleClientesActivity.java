@@ -22,8 +22,6 @@ public class ControleClientesActivity extends AppCompatActivity {
     List<Cliente> clientes;
     ClientesAdapter adapter;
     ListView lista;
-
-
     private ClienteDao mClienteDao;
 
     @Override

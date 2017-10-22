@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
 
             switch(view.getId()){
+                case R.id.id_btn_veiculo:
+                    Intent itVei = new Intent(MainActivity.this, ControleCarrosActivity.class);
+                    startActivity(itVei);
+                    break;
                 case R.id.id_btn_clientes:
                     Intent itClt = new Intent(MainActivity.this, ControleClientesActivity.class);
                     startActivity(itClt);
@@ -29,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnControlVei = (Button) findViewById(R.id.id_btn_veiculo);
         Button btnControlClt = (Button) findViewById(R.id.id_btn_clientes);
+        btnControlVei.setOnClickListener(mTratadorCliques);
         btnControlClt.setOnClickListener(mTratadorCliques);
     }
 }

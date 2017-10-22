@@ -9,16 +9,16 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by abner on 14/10/17.
  */
 
-public class ClienteSQLHelper extends SQLiteOpenHelper {
+public class RevendaSQLHelper extends SQLiteOpenHelper {
 
-    private static final String NOME_BANCO = "dbCliente";
+    private static final String NOME_BANCO = "dbRevenda";
     private static final int VERSAO_BANCO = 1;
 
 
     public static final String TABELA_CLIENTES = "CLIENTES";
     public static final String TABELA_CARROS = "CARROS";
 
-    public ClienteSQLHelper(Context context) {
+    public RevendaSQLHelper(Context context) {
         super(context, NOME_BANCO, null, VERSAO_BANCO);
     }
 
@@ -48,7 +48,8 @@ public class ClienteSQLHelper extends SQLiteOpenHelper {
                 "ANO INTEGER NOT NULL, " +
                 "FABRICANTE INTEGER NOT NULL, " +
                 "GASOLINA INTEGER, " +
-                "ETANOL TEXT " +
+                "ETANOL INTEGER, " +
+                "PRECO REAL " +
                 ") ");
     }
 

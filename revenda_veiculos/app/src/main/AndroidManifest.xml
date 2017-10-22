@@ -18,12 +18,16 @@
         </activity>
         <activity
             android:name=".ControleClientesActivity"
-            android:label="@string/controle_clientes"
-            />
+            android:label="@string/controle_clientes" />
         <activity
             android:name=".FormularioClienteActivity"
-            android:label="@string/formulario_clientes"
-            >
+            android:label="@string/formulario_clientes" />
+        <activity
+            android:name=".ControleCarrosActivity"
+            android:label="@string/controle_clientes" />
+        <activity
+            android:name=".FormularioCarroActivity"
+            android:label="@string/formulario_carros" >
         </activity>
     </application>
 
