@@ -16,6 +16,7 @@ public class ClienteSQLHelper extends SQLiteOpenHelper {
 
 
     public static final String TABELA_CLIENTES = "CLIENTES";
+    public static final String TABELA_CARROS = "CARROS";
 
     public ClienteSQLHelper(Context context) {
         super(context, NOME_BANCO, null, VERSAO_BANCO);
@@ -39,6 +40,15 @@ public class ClienteSQLHelper extends SQLiteOpenHelper {
                 "NOME TEXT, " +
                 "RENDA INTEGER, " +
                 "OBSERVACAO TEXT " +
+                ") ");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABELA_CARROS + " (" +
+                "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "MODELO TEXT NOT NULL, " +
+                "ANO INTEGER NOT NULL, " +
+                "FABRICANTE INTEGER NOT NULL, " +
+                "GASOLINA INTEGER, " +
+                "ETANOL TEXT " +
                 ") ");
     }
 
