@@ -64,8 +64,8 @@ public class CarrosAdapter extends BaseAdapter {
 
         txtModelo.setText(carro.getModelo());
         txtAno.setText(String.valueOf(carro.getAno()));
-        String combustivel = (carro.gasolina ? "G" : "") +
-                (carro.etanol ? "E" : "");
+        String combustivel = (carro.isGasolina() ? "G" : "") +
+                (carro.isEtanol() ? "E" : "");
         txtCombustivel.setText(combustivel);
         // Retornar view
         return linha;

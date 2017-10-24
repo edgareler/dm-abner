@@ -24,10 +24,10 @@
             android:label="@string/formulario_clientes" />
         <activity
             android:name=".ControleCarrosActivity"
-            android:label="@string/controle_clientes" />
+            android:label="@string/controle_carros" />
         <activity
             android:name=".FormularioCarroActivity"
-            android:label="@string/formulario_carros" >
+            android:label="@string/formulario_carros">
         </activity>
     </application>
 

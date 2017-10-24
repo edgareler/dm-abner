@@ -77,7 +77,7 @@ public class FormularioCarroActivity extends AppCompatActivity {
         if(mCarro != null){
             mTxtIdVeiculo.setText(String.valueOf(mCarro.getId()));
             mEdtModelo.setText(mCarro.getModelo());
-            mEdtAno.setText(mCarro.getAno());
+            mEdtAno.setText(String.valueOf(mCarro.getAno()));
             mSpnFabricante.setSelection(mCarro.getFabricante());
             mChkGasolina.setChecked(mCarro.isGasolina());
             mChkEtanol.setChecked(mCarro.isEtanol());
@@ -118,7 +118,7 @@ public class FormularioCarroActivity extends AppCompatActivity {
         if(id > 0) {
             Toast.makeText(this, "Carro salvo com sucesso!", Toast.LENGTH_SHORT).show();
         } else {
-                Toast.makeText(this, "Erro ao salvar o carro!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro ao salvar o carro!", Toast.LENGTH_SHORT).show();
         }
 
         finish();

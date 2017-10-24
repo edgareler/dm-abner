@@ -16,6 +16,7 @@ import java.util.List;
 
 public class CarroDao {
     private RevendaSQLHelper helper;
+
     public static final String TABELA_CARROS = "CARROS";
     public static final String COLUNA_ID = "ID";
     public static final String COLUNA_MODELO = "MODELO";
@@ -25,7 +26,8 @@ public class CarroDao {
     public static final String COLUNA_ETANOL = "ETANOL";
     public static final String COLUNA_PRECO = "PRECO";
 
-    public CarroDao(Context ctx) { helper = new RevendaSQLHelper(ctx); }
+    public CarroDao(Context ctx) {
+        helper = new RevendaSQLHelper(ctx); }
 
     public long inserir(Carro carro) {
         SQLiteDatabase db = helper.getWritableDatabase();

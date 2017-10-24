@@ -3,7 +3,6 @@ package com.example.abner.revenda_veiculos;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ListViewCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -19,8 +18,8 @@ import java.util.List;
 public class ControleCarrosActivity extends AppCompatActivity {
 
     List<Carro> carros;
-    CarrosAdapter adapter;
-    ListView lista;
+    CarrosAdapter adapterCarros;
+    ListView listaCarros;
     private CarroDao mCarroDao;
 
     @Override
@@ -40,12 +39,12 @@ public class ControleCarrosActivity extends AppCompatActivity {
             }
         });
 
-        lista = (ListView) findViewById(R.id.listaCarros);
+        listaCarros = (ListView) findViewById(R.id.listaCarros);
 
-
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaCarros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 Carro carro = (Carro) adapterView.getItemAtPosition(i);
 
                 Intent novo= new Intent(ControleCarrosActivity.this, FormularioCarroActivity.class);
@@ -54,7 +53,7 @@ public class ControleCarrosActivity extends AppCompatActivity {
             }
         });
 
-        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listaCarros.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Carro carro = (Carro) adapterView.getItemAtPosition(i);
@@ -76,9 +75,9 @@ public class ControleCarrosActivity extends AppCompatActivity {
 
         carros = mCarroDao.all();
 
-        adapter = new CarrosAdapter(this, carros);
+        adapterCarros = new CarrosAdapter(this, carros);
 
-        lista.setAdapter(adapter);
+        listaCarros.setAdapter(adapterCarros);
 
     }
 
@@ -86,7 +85,7 @@ public class ControleCarrosActivity extends AppCompatActivity {
 
         carros = mCarroDao.all();
 
-        adapter.notifyDataSetChanged();
+        adapterCarros.notifyDataSetChanged();
 
     }
 
