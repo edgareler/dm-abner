@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
                     Intent itClt = new Intent(MainActivity.this, ControleClientesActivity.class);
                     startActivity(itClt);
                     break;
+                case R.id.id_btn_compras:
+                    Intent itComp = new Intent(MainActivity.this, ControleComprasActivity.class);
+                    startActivity(itComp);
+                    break;
             }
         }
     };
@@ -35,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnControlVei = (Button) findViewById(R.id.id_btn_veiculo);
         Button btnControlClt = (Button) findViewById(R.id.id_btn_clientes);
+        Button btnControlComp = (Button) findViewById(R.id.id_btn_compras);
         btnControlVei.setOnClickListener(mTratadorCliques);
         btnControlClt.setOnClickListener(mTratadorCliques);
+        btnControlComp.setOnClickListener(mTratadorCliques);
     }
 }

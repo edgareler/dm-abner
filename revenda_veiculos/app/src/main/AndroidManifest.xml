@@ -27,8 +27,9 @@
             android:label="@string/controle_carros" />
         <activity
             android:name=".FormularioCarroActivity"
-            android:label="@string/formulario_carros">
-        </activity>
+            android:label="@string/formulario_carros" />
+        <activity android:name=".ControleComprasActivity" />
+        <activity android:name=".FormularioCompraActivity"></activity>
     </application>
 
 </manifest>

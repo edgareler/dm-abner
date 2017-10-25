@@ -89,11 +89,11 @@ public class FormularioCarroActivity extends AppCompatActivity {
     private void salvar(){
 
         String modelo = mEdtModelo.getText().toString();
-        int ano = Integer.valueOf(mEdtAno.getText().toString());
+        String ano = mEdtAno.getText().toString();
         int fabricante = mSpnFabricante.getSelectedItemPosition();
         boolean gasolina = mChkGasolina.isChecked();
         boolean etanol = mChkEtanol.isChecked();
-        double preco = Double.valueOf(mEdtPreco.getText().toString());
+        String preco = mEdtPreco.getText().toString();
 
         if(mCarro == null){
             mCarro = new Carro(

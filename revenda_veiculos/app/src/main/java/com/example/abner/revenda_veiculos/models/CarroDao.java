@@ -119,11 +119,12 @@ public class CarroDao {
         while(cursor.moveToNext()) {
             Long id = cursor.getLong(cursor.getColumnIndex(COLUNA_ID));
             String modelo = cursor.getString(cursor.getColumnIndex(COLUNA_MODELO));
-            int ano = cursor.getInt(cursor.getColumnIndex(COLUNA_ANO));
+            //int ano = cursor.getInt(cursor.getColumnIndex(COLUNA_ANO));
+            String ano = cursor.getString(cursor.getColumnIndex(COLUNA_ANO));
             int fabricante = cursor.getInt(cursor.getColumnIndex(COLUNA_FABRICANTE));
             boolean gasolina = cursor.getInt(cursor.getColumnIndex(COLUNA_GASOLINA)) == 1;
             boolean etanol = cursor.getInt(cursor.getColumnIndex(COLUNA_ETANOL)) == 1;
-            double preco = cursor.getDouble(cursor.getColumnIndex(COLUNA_PRECO));
+            String preco = cursor.getString(cursor.getColumnIndex(COLUNA_PRECO));
 
             Carro carro = new Carro(id, modelo, ano, fabricante, gasolina, etanol, preco);
             carros.add(carro);

@@ -63,7 +63,8 @@ public class CarrosAdapter extends BaseAdapter {
         imgLogo.setImageDrawable(logos.getDrawable(carro.getFabricante()));
 
         txtModelo.setText(carro.getModelo());
-        txtAno.setText(String.valueOf(carro.getAno()));
+        //txtAno.setText(String.valueOf(carro.getAno()));
+        txtAno.setText(carro.getAno());
         String combustivel = (carro.isGasolina() ? "G" : "") +
                 (carro.isEtanol() ? "E" : "");
         txtCombustivel.setText(combustivel);

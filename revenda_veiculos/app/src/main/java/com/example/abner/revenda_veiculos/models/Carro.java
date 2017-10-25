@@ -10,13 +10,13 @@ import java.util.Locale;
 public class Carro implements Serializable {
     public Long id;
     public String modelo = " ";
-    public int ano = 0;
+    public String ano;
     public int fabricante = 0;
     public boolean gasolina = false;
     public boolean etanol = false;
-    public double preco = 0;
+    public String preco;
 
-    public Carro(String modelo, int ano, int fabricante, boolean gasolina, boolean etanol, double preco) {
+    public Carro(String modelo, String ano, int fabricante, boolean gasolina, boolean etanol, String preco) {
         this.modelo = modelo;
         this.ano = ano;
         this.fabricante = fabricante;
@@ -25,7 +25,7 @@ public class Carro implements Serializable {
         this.preco = preco;
     }
 
-    public Carro(Long id, String modelo, int ano, int fabricante, boolean gasolina, boolean etanol, double preco) {
+    public Carro(Long id, String modelo, String ano, int fabricante, boolean gasolina, boolean etanol, String preco) {
         this.id = id;
         this.modelo = modelo;
         this.ano = ano;
@@ -51,11 +51,11 @@ public class Carro implements Serializable {
         this.modelo = modelo;
     }
 
-    public int getAno() {
+    public String getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(String ano) {
         this.ano = ano;
     }
 
@@ -91,11 +91,11 @@ public class Carro implements Serializable {
         this.etanol = etanol;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
